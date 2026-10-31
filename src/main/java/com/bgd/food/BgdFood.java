@@ -36,7 +36,7 @@ public class BgdFood implements ModInitializer {
 
         for (ServerPlayerEntity p : targets) {
             p.getHungerManager().setFoodLevel(hunger);
-            if (saturation >= 0f) p.getHungerManager().setSaturation(saturation);
+            if (saturation >= 0f) p.getHungerManager().setSaturationLevel(saturation);
 
             // 立刻同步给客户端，否则 HUD 要等下一次自然刷新
             p.networkHandler.sendPacket(new HealthUpdateS2CPacket(
