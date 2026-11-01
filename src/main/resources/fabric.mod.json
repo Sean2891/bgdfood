@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "bgdfood",
+  "version": "${version}",
+  "name": "BGD Food Control",
+  "description": "任意设置玩家饥饿值与饱和度",
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": { "main": ["com.bgd.food.BgdFood"] },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}
