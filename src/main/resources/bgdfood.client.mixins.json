@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.bgd.food.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["HungerHudMixin"],
+  "injectors": { "defaultRequire": 1 }
+}
