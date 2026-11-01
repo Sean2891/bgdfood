@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderTickCounter;   // ← 新增
 import net.minecraft.util.Identifier;
 import net.minecraft.world.GameMode;
 
@@ -16,7 +17,8 @@ public class FoodHudRenderer implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        HudRenderCallback.EVENT.register((DrawContext ctx, var tick) -> {
+        // 1.21.1 的签名是 (DrawContext, RenderTickCounter)
+        HudRenderCallback.EVENT.register((DrawContext ctx, RenderTickCounter tick) -> {
             MinecraftClient mc = MinecraftClient.getInstance();
             if (mc.player == null || mc.options.hudHidden) return;
             if (mc.interactionManager == null
